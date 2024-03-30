@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, Button, Heading, Table, Thead, Tbody, Tr, Th, Td, Input, IconButton, useToast } from "@chakra-ui/react";
+import { Box, Button, Flex, Heading, Table, Thead, Tbody, Tr, Th, Td, Input, IconButton, useToast } from "@chakra-ui/react";
 import { FaPlus, FaTrash, FaSignOutAlt } from "react-icons/fa";
 
 const Index = () => {
@@ -48,9 +48,13 @@ const Index = () => {
         LLM App
       </Heading>
 
-      <Box mb={4}>
-        <Input value={newPrompt} onChange={(e) => setNewPrompt(e.target.value)} placeholder="Enter a new prompt" mr={2} />
-        <Button onClick={handleAddPrompt}>Add Prompt</Button>
+      <Box mb={8}>
+        <Flex alignItems="center">
+          <Input value={newPrompt} onChange={(e) => setNewPrompt(e.target.value)} placeholder="Enter a new prompt" mr={2} />
+          <Button onClick={handleAddPrompt} ml="auto">
+            Add Prompt
+          </Button>
+        </Flex>
       </Box>
 
       <Table variant="simple">
